@@ -32,19 +32,25 @@ body::-webkit-scrollbar{
 }
 
 
+.header-logo-container,
+.header-nav-container,
+.search-container,
+.search-container form,
+.lang-container,
+.main-slider-container div{
+    float:left;
+}
 
 header{
     width:100%;
     text-align: center;
     padding:60px 0;
+    position: fixed;
+    transition: 700ms;
+    z-index: 9999;
 }
-
-.header-logo-container,
-.header-nav-container,
-.search-container,
-.search-container form,
-.lang-container{
-    float:left;
+header:hover{
+    background-color: #fff;
 }
 
 .header-container{
@@ -71,6 +77,11 @@ header{
 }
 .main-nav{
     overflow: hidden;
+    height:40px;
+    transition: 700ms;
+}
+.main-nav:hover{
+    height:300px;
 }
 .main-nav > li{
     float:left;
@@ -101,6 +112,7 @@ header{
     font-size:16px;
     font-weight:400;
     color:#969696;
+    display: inline-block;
 }
 .sub-nav a:after{
     display:block;
@@ -121,7 +133,7 @@ header{
 
 .search-container{
     position: relative;
-    border: 2px solid #000;
+    border: 2px solid #222;
     border-radius: 72px;
     width:200px;
     margin-right:16px;
@@ -134,6 +146,7 @@ header{
 .search-container form input[type="search"]{
     font-size:14px;
     font-weight:400;
+    background-color: transparent;
 }
 .search-container .search-icon{
     vertical-align: middle;
@@ -147,5 +160,48 @@ header{
 .lang-container a{
     font-size:16px;
     font-weight: 700;
-    color:#333;
+    color:#222;
+}
+
+
+
+.slider-big-container{
+    width:1920px;
+    position: relative;
+}
+.main-slider-container{
+    width:5760px;
+}
+.main-slider-container div{
+    text-align: center;
+    width:1920px; height:100vh;
+    position: relative;
+}
+.main-slider-container div h2{
+    position: absolute;
+    left:50%; top:50%;
+    transform: translate(-50%, -50%);
+    font-family: 'SANJUGotgam';
+    font-size:48px;
+    color:#222222;
+}
+.main_section-01{
+    background: url(../images/main_section_image01.png) no-repeat center / cover;
+}
+.main_section-02{
+    background: url(../images/main_section_image02.png) no-repeat center / cover;
+}
+.main_section-03{
+    background: url(../images/main_section_image03.png) no-repeat center / cover;
+}
+
+.circle-container{
+    z-index: 9998;
+}
+.circle{
+    width:20px; height:20px;
+    border-radius: 50%;
+    background-color: #222;
+    float:left;
+    margin:0 24px;
 }
