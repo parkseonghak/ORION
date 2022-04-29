@@ -197,6 +197,7 @@ header:hover{
 
 .circle-container{
     z-index: 9998;
+    
 }
 .circle{
     width:20px; height:20px;
