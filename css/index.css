@@ -13,7 +13,8 @@
     font-family: 'pretendard', sans-serif;
 }
 
-.lang-container{
+.lang-container,
+.view-container h2{
     font-family: 'Roboto', sans-serif;
 }
 
@@ -32,12 +33,31 @@ body::-webkit-scrollbar{
 }
 
 
+.logo-container,
+.search-container,
+.main-slider-container div,
+.view-container,
+.product-list{
+    position: relative;
+}
+
+.hidden,
+.main-slider-container div h2,
+.circle-container,
+.view-container video,
+.view-container h2{
+    position: absolute;
+}
+
 .header-logo-container,
 .header-nav-container,
 .search-container,
+.main-nav > li,
 .search-container form,
 .lang-container,
-.main-slider-container div{
+.main-slider-container div,
+.product,
+.circle{
     float:left;
 }
 
@@ -59,11 +79,7 @@ header:hover{
     overflow: hidden;
 }
 
-.logo-container{
-    position: relative;
-}
 .hidden{
-    position: absolute;
     clip: rect(1px, 1px, 1px, 1px);
     clip-path: inset(1px 1px 99.9% 99.9%);
     overflow: hidden;
@@ -84,7 +100,6 @@ header:hover{
     height:300px;
 }
 .main-nav > li{
-    float:left;
     line-height: 42px;
     width:102px;
     box-sizing: border-box;
@@ -132,7 +147,6 @@ header:hover{
 }
 
 .search-container{
-    position: relative;
     border: 2px solid #222;
     border-radius: 72px;
     width:200px;
@@ -167,7 +181,7 @@ header:hover{
 
 .slider-big-container{
     width:1920px;
-    position: relative;
+    overflow: hidden;
 }
 .main-slider-container{
     width:5760px;
@@ -175,10 +189,8 @@ header:hover{
 .main-slider-container div{
     text-align: center;
     width:1920px; height:100vh;
-    position: relative;
 }
 .main-slider-container div h2{
-    position: absolute;
     left:50%; top:50%;
     transform: translate(-50%, -50%);
     font-family: 'SANJUGotgam';
@@ -197,12 +209,62 @@ header:hover{
 
 .circle-container{
     z-index: 9998;
+    left:50%; top: 900px;
+    transform: translateX(-50%);
     
 }
 .circle{
     width:20px; height:20px;
     border-radius: 50%;
     background-color: #222;
-    float:left;
     margin:0 24px;
+    transition: 300ms;
 }
+.circle:hover{
+    cursor: pointer;
+    border: 2px solid #222;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+
+.product-view{
+    width:100%; height:100vh
+}
+
+.view-container{
+    width:100%; height:540px;
+}
+.view-container h2{
+    font-weight: 700;
+    font-size:48px;
+    color:#333;
+    left:50%; top:50%;
+    transform: translate(-50%, -50%);
+}
+
+.product-list{
+    width:100%; height:429px;
+    overflow: hidden;
+}
+.section-circle-deco svg{
+    position:absolute;
+}
+.left-circle-deco{
+    left:-150px;
+}
+.right-circle-deco{
+    right:-100px; top:100px;
+}
+
+.product-container{
+    width:1500px;
+    margin:0 auto;
+    padding: 48px 0;
+    text-align: center;
+}
+.product{
+    width:234px;
+    margin: 0 120px;
+}
+
