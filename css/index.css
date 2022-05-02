@@ -44,6 +44,7 @@ body::-webkit-scrollbar{
 .hidden,
 .main-slider-container div h2,
 .circle-container,
+.section-circle-deco svg,
 .view-container video,
 .view-container h2{
     position: absolute;
@@ -233,7 +234,11 @@ header:hover{
 }
 
 .view-container{
-    width:100%; height:540px;
+    width:100%; height:50vh;
+}
+.view-container video{
+    width:100%; height:100%;
+    object-fit: cover;
 }
 .view-container h2{
     font-weight: 700;
@@ -244,11 +249,8 @@ header:hover{
 }
 
 .product-list{
-    width:100%; height:429px;
+    width:100%; height:50vh;
     overflow: hidden;
-}
-.section-circle-deco svg{
-    position:absolute;
 }
 .left-circle-deco{
     left:-150px;
@@ -258,9 +260,10 @@ header:hover{
 }
 
 .product-container{
+    overflow: hidden;
     width:1500px;
     margin:0 auto;
-    padding: 48px 0;
+    padding: 84px 0;
     text-align: center;
 }
 .product{
@@ -270,8 +273,8 @@ header:hover{
 .product-img-container:after{
     content: '';
     display: block;
-    width:180px; 
-    border-bottom: 4px solid #D81B16;
+    width:150px; 
+    border-bottom: 2px solid #D81B16;
     margin: 32px auto;
 }
 .product-img-container img{
@@ -314,14 +317,22 @@ header:hover{
     position:relative;
     text-align: center;
 }
+.affection-container ul li::before {
+    background-color: #000;
+    display: block;
+    height: 100%;
+    content: '';
+    opacity: 0.3;
+    transition: 0.5s;
+}
 .affection-img-container01{
-    background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/sec03_img01.png) no-repeat center / cover;
+    background: url(../images/sec03_img01.png) no-repeat center / cover;
 }
 .affection-img-container02{
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/sec03_img02.png) no-repeat center / cover;
+    background:  url(../images/sec03_img02.png) no-repeat center / cover;
 }
 .affection-img-container03{
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../images/sec03_img03.png) no-repeat center / cover;
+    background:  url(../images/sec03_img03.png) no-repeat center / cover;
 }
 .affection-container ul li h2{
     position: absolute;
@@ -333,4 +344,36 @@ header:hover{
 }
 .affection-container ul li h2 span{
     color:#D81B16;
+}
+
+
+
+.about-orion{
+    width:100%; height:100vh;
+    position: relative;
+}
+.about-orion:first-of-type{
+    background-color: #53A8BC;
+}
+.about-orion:nth-of-type(){
+
+}
+.about-orion:nth-of-type(){
+
+}
+.about-orion:nth-of-type(){
+
+}
+.left-img-container{
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.right-container{
+    position: absolute;
+    width: 500px;
+    right: 20%;
+    top: 50%;
+    transform: translateY(-50%);
 }
