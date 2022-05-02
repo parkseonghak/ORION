@@ -37,7 +37,11 @@ body::-webkit-scrollbar{
 .search-container,
 .main-slider-container div,
 .view-container,
-.product-list{
+.affection-container ul li,
+.product-list,
+.about-orion,
+.global-orion,
+.global_explanation{
     position: relative;
 }
 
@@ -46,7 +50,15 @@ body::-webkit-scrollbar{
 .circle-container,
 .section-circle-deco svg,
 .view-container video,
-.view-container h2{
+.view-container h2,
+.affection-container ul li h2,
+.left-img-container,
+.right-container,
+.right-img-container,
+.left-container,
+.global-introduce,
+.global_explanation p,
+.move-global-page{
     position: absolute;
 }
 
@@ -58,7 +70,9 @@ body::-webkit-scrollbar{
 .lang-container,
 .main-slider-container div,
 .product,
-.circle{
+.affection-container ul li,
+.circle,
+.global-introduce ul li a{
     float:left;
 }
 
@@ -111,7 +125,7 @@ header:hover{
 .main-nav > li > a{
     font-size:24px;
     font-weight: 600;
-    color:#222;
+    color:#333;
     display: block;
     height:100%;
 
@@ -148,7 +162,7 @@ header:hover{
 }
 
 .search-container{
-    border: 2px solid #222;
+    border: 2px solid #333;
     border-radius: 72px;
     width:200px;
     margin-right:16px;
@@ -175,7 +189,7 @@ header:hover{
 .lang-container a{
     font-size:16px;
     font-weight: 700;
-    color:#222;
+    color:#333;
 }
 
 
@@ -196,7 +210,7 @@ header:hover{
     transform: translate(-50%, -50%);
     font-family: 'SANJUGotgam';
     font-size:48px;
-    color:#222222;
+    color:#333333;
 }
 .main_section-01{
     background: url(../images/main_section_image01.png) no-repeat center / cover;
@@ -217,13 +231,13 @@ header:hover{
 .circle{
     width:20px; height:20px;
     border-radius: 50%;
-    background-color: #222;
+    background-color: #333;
     margin:0 24px;
     transition: 300ms;
 }
 .circle:hover{
     cursor: pointer;
-    border: 2px solid #222;
+    border: 2px solid #333;
     background-color: transparent;
     box-sizing: border-box;
 }
@@ -293,7 +307,7 @@ header:hover{
 }
 .product a:hover{
     background-color: #D81B16;
-    color:#fafafa;
+    color:#fbfbfb;
 }
 .font-pretendard{
     font-family: 'pretendard';
@@ -312,9 +326,8 @@ header:hover{
     overflow: hidden;
 }
 .affection-container ul li{
-    float:left; width:33.33%;
+    width:33.33%;
     height:100vh;
-    position:relative;
     text-align: center;
 }
 .affection-container ul li::before {
@@ -335,12 +348,11 @@ header:hover{
     background:  url(../images/sec03_img03.png) no-repeat center / cover;
 }
 .affection-container ul li h2{
-    position: absolute;
     left:50%; top:50%;
     transform: translate(-50%, -50%);
     font-family: 'pretendard';
     font-size:32px;
-    color:#fafafa;
+    color:#fbfbfb;
 }
 .affection-container ul li h2 span{
     color:#D81B16;
@@ -348,32 +360,136 @@ header:hover{
 
 
 
-.about-orion{
-    width:100%; height:100vh;
-    position: relative;
-}
-.about-orion:first-of-type{
+.operation-container > div:nth-of-type(2){
     background-color: #53A8BC;
 }
-.about-orion:nth-of-type(){
-
+.operation-container > div:nth-of-type(3){
+    background-color: #D81B16;
 }
-.about-orion:nth-of-type(){
-
+.operation-container > div:nth-of-type(4){
+    background-color: #DABB85;
 }
-.about-orion:nth-of-type(){
-
+.operation-container > div:nth-of-type(5){
+    background-color: #6F5944;
+}
+.about-orion{
+    width:100%; height:100vh;
 }
 .left-img-container{
-    position: absolute;
     left: 10%;
     top: 50%;
     transform: translateY(-50%);
 }
 .right-container{
-    position: absolute;
-    width: 500px;
+    width: 600px;
     right: 20%;
     top: 50%;
     transform: translateY(-50%);
+}
+.right-img-container{
+    right:10%;
+    top:50%;
+    transform: translateY(-50%);
+}
+.left-container{
+    width:600px;
+    left:20%;
+    top:50%;
+    transform: translateY(-50%);
+}
+.about-orion h2{
+    font-family: 'pretendard';
+    font-size:42px;
+    font-weight: 400;
+    color:#fbfbfb;
+}
+.about-orion h2 span{
+    font-weight: 700;
+}
+.about-orion p{
+    font-family: 'pretendard';
+    color:#fbfbfb;
+    margin-top:42px;
+    line-height: 24px;
+}
+
+
+.global-orion{
+    width:100%; height:80vh;
+    background-color: #fbfbfb;
+}
+.global-introduce{
+    width:650px; height:574px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+}
+.global-title-container{
+    margin-top:88px;
+}
+.global-title-container h2{
+    font-family: 'pretendard';
+    font-size:48px;
+    width: 520px;
+    margin: 0 auto;
+}
+.global-introduce h2 span{
+    font-size:96px;
+    color:#D81B16;
+}
+.global-introduce ul{
+    overflow: hidden;
+    width: 600px;
+    margin: 0 auto;
+}
+.global-introduce ul li{
+    margin-top:16px;
+}
+.global-introduce ul li a{
+   width:124px; height:50px;
+   border:1px solid #D81B16;
+   padding:2px;
+   border-radius: 50px;
+   font-family: 'Roboto';
+   font-size: 24px;
+   font-weight: 600;
+   color:#333;
+   transition: 700ms;
+   text-align: center;
+   font-family: 'Roboto';
+   line-height: 48px;
+   margin:0px 32px;
+}
+.global-introduce ul li a:hover{
+    background-color: #D81B16;
+    color:#fbfbfb;
+}
+.global_explanation{
+    width: 520px;
+    margin: 0 auto;
+}
+.global_explanation p{
+    font-family: 'pretendard';
+    font-size:20px;
+    font-weight: 500;
+    color:#333;
+    margin-top: 30px;
+}
+.hide-global{
+    display: none;
+}
+.move-global-page{
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    border: 1px solid #D81B16;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-family: 'pretendard';
+    font-size: 24px;
+    color:#D81B16;
+    transition: 700ms;
+}
+.move-global-page:hover{
+    background-color: #D81B16;
+    color:#fbfbfb;
 }
