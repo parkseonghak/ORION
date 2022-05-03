@@ -42,7 +42,8 @@ body::-webkit-scrollbar{
 .product-list,
 .about-orion,
 .global-orion,
-.global_explanation{
+.global_explanation,
+.sns-icon{
     position: relative;
 }
 
@@ -62,7 +63,8 @@ body::-webkit-scrollbar{
 .global_explanation p,
 .move-global-page,
 .world-map-location img,
-.world-map-location svg{
+.world-map-location svg,
+.sns-icon span{
     position: absolute;
 }
 
@@ -76,7 +78,8 @@ body::-webkit-scrollbar{
 .product,
 .affection-container ul li,
 .circle,
-.global-introduce ul li a{
+.global-introduce ul li a,
+.icon-space-container{
     float:left;
 }
 
@@ -500,7 +503,7 @@ header:hover{
 }
 .move-global-page{
     left: 50%;
-    bottom: 10%;
+    bottom: 5%;
     transform: translateX(-50%);
     border: 1px solid #D81B16;
     padding: 12px 24px;
@@ -517,4 +520,89 @@ header:hover{
 .world-map-location img{
     right:10%; top:50%;
     transform: translateY(-45%);
+}
+
+footer{
+    background-color: #222;
+    overflow: hidden;
+}
+.footer-wrapper{
+    width:1580px;
+    margin: 0 auto;
+}
+
+
+.left-area{
+    float:left;
+    margin:32px 0;
+    width: 1400px;
+}
+.top-area,
+.mid-area,
+.bottom-area{
+    margin-top:12px;
+}
+.top-area a,
+.mid-area p,
+.bottom-area p{
+    font-family: 'pretendard';
+    font-size:16px;
+    font-weight: 500;
+    color:#fbfbfb;
+}
+.green-word{
+    color:#15AB49;
+}
+.footer-logo-container{
+    width: 150px; display: inline-block;
+    vertical-align: middle;
+}
+.mid-area p{
+    display: inline-block;
+}
+.bottom-area p{
+    display: inline-block;
+}
+.bottom-area p span{
+    font-weight: 200;
+}
+.copyright{
+    font-family:'Roboto';
+    font-size:12px;
+    color:#fbfbfb;
+    margin-top: 20px;
+}
+
+.right-area{
+    float:left;
+    width:180px;
+}
+.family-site-button{
+    border: 2px solid #969696;
+    width: 180px;
+    display: block;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.family-site-button span{
+    color: #969696;
+    font-size: 18px;
+}
+
+.sns-container{
+    overflow: hidden;
+}
+.icon-space-container:not(:last-of-type){
+    margin-right:28px;
+}
+.sns-icon{
+    width:24px; height: 24px;
+    display: block;
+}
+.sns-icon span{
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(1px 1px 99.9% 99.9%);
+    overflow: hidden;
+    width:1px; height:1px;
+    left:50%; top:50%;
 }
