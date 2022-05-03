@@ -37,6 +37,7 @@ body::-webkit-scrollbar{
 .search-container,
 .main-slider-container div,
 .view-container,
+.product,
 .affection-container ul li,
 .product-list,
 .about-orion,
@@ -51,6 +52,7 @@ body::-webkit-scrollbar{
 .section-circle-deco svg,
 .view-container video,
 .view-container h2,
+.product:after,
 .affection-container ul li h2,
 .left-img-container,
 .right-container,
@@ -58,7 +60,9 @@ body::-webkit-scrollbar{
 .left-container,
 .global-introduce,
 .global_explanation p,
-.move-global-page{
+.move-global-page,
+.world-map-location img,
+.world-map-location svg{
     position: absolute;
 }
 
@@ -284,26 +288,38 @@ header:hover{
     width:234px;
     margin: 0 120px;
 }
-.product-img-container:after{
+.product:after{
     content: '';
-    display: block;
-    width:150px; 
-    border-bottom: 2px solid #D81B16;
-    margin: 32px auto;
+    width:150px;
+    height:2px;
+    background-color: #D81B16;
+    left:50%; top:262px;
+    transform: translateX(-50%);
 }
-.product-img-container img{
+.product-img-container{
+    width:234px; height:234px;
+    border-radius: 50%;
+    overflow: hidden;
     transition: 700ms;
 }
-.product-img-container img:hover{
+.product-img-container:hover{
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
 }
+.product-img-container img{
+    width:100%; height:100%;
+    object-fit: cover;
+}
 .product a{
+    display: block;
+    width: 70px;
+    margin:0 auto;
     border: 1px solid #D81B16;
     border-radius: 50px;
     padding: 4px 12px;
     font-size: 16px;
     color: #969696;
     transition: 500ms;
+    margin-top:62px;
 }
 .product a:hover{
     background-color: #D81B16;
@@ -382,7 +398,7 @@ header:hover{
 }
 .right-container{
     width: 600px;
-    right: 20%;
+    right: 10%;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -422,6 +438,11 @@ header:hover{
     width:650px; height:574px;
     border-radius: 30px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    left:10%; top:50%;
+    transform: translateY(-40%);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+
 }
 .global-title-container{
     margin-top:88px;
@@ -492,4 +513,8 @@ header:hover{
 .move-global-page:hover{
     background-color: #D81B16;
     color:#fbfbfb;
+}
+.world-map-location img{
+    right:10%; top:50%;
+    transform: translateY(-45%);
 }
