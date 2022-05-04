@@ -363,6 +363,7 @@ header:hover{
     height:100vh;
     text-align: center;
 }
+
 .affection-container ul li::before {
     background-color: #000;
     display: block;
@@ -370,6 +371,10 @@ header:hover{
     content: '';
     opacity: 0.3;
     transition: 0.5s;
+    cursor: pointer;
+}
+.affection-container ul li:hover::before{
+    opacity: 0.1;
 }
 .affection-img-container01{
     background: url(../images/sec03_img01.png) no-repeat center / cover;
@@ -392,7 +397,12 @@ header:hover{
 }
 
 
-
+.operation-container .header-section{
+    display:block;
+    width:100%;
+    background-color: #fbfbfb;
+    cursor:default;
+}
 .operation-container > div:nth-of-type(2){
     background-color: #53A8BC;
 }
@@ -406,8 +416,87 @@ header:hover{
     background-color: #6F5944;
 }
 .about-orion{
-    width:100%; height:100vh;
+    width:100%; height:65vh;
+    transition: 700ms;
 }
+
+.modify{
+    height: 20vh;
+    transition: 700ms;
+    cursor: pointer;
+}
+.modify:not(:first-of-type)::after{
+    content: '';
+    background-color: black;
+    height: 100%;
+    display: block;
+    opacity: 0.2;
+    transition: 500ms;
+}
+.modify:hover::after{
+    opacity: 0;
+}
+.modify .left-img-container{
+    display: none;
+}
+.modify .right-container{
+    text-align: center;
+    left:50%; top:50%;
+    transform: translate(-50%, -50%);
+}
+.modify .right-container p{
+    display: none;
+}
+.modify .right-img-container{
+    display: none;
+}
+.modify .left-container{
+    text-align: center;
+    left:50%; top:50%;
+    transform: translate(-50%, -50%);
+}
+.modify .left-container p{
+    display: none;
+}
+
+.hide-section{
+    height: 5vh;
+    transition: 700ms;
+    cursor: pointer;
+}
+.hide-section .right-container,
+.hide-section .left-container{
+    width:100%;
+}
+.hide-section .left-img-container,
+.hide-section .right-img-container,
+.hide-section .right-container br,
+.hide-section .left-container br,
+.hide-section .right-container p,
+.hide-section .left-container p{
+    display: none;
+    text-align: center;
+}
+.hide-section .left-container{
+    left:0;
+    text-align: center;
+}
+.hide-section .right-container{
+    right:0;
+    text-align: center;
+}
+.hide-section:not(:first-of-type)::after{
+    content: '';
+    background-color: black;
+    height: 100%;
+    display: block;
+    opacity: 0.2;
+    transition: 500ms;
+}
+.hide-section:hover::after{
+    opacity: 0;
+}
+
 .left-img-container{
     left: 10%;
     top: 50%;
