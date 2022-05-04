@@ -199,6 +199,20 @@ header:hover{
     color:#333;
 }
 
+.scroll-top-move-btn{
+    width: 72px;
+    height: 72px;
+    position: fixed;
+    right: 5%;
+    bottom: 10%;
+    z-index: 9999;
+    cursor: pointer;
+}
+.scroll-top-move-btn:hover{
+    box-shadow: 0px 3px 4px rgb(0 0 0 / 25%);
+    border-radius: 50%;
+}
+
 
 
 .slider-big-container{
@@ -524,7 +538,7 @@ header:hover{
 
 footer{
     background-color: #222;
-    overflow: hidden;
+    height: 20vh;
 }
 .footer-wrapper{
     width:1580px;
@@ -534,7 +548,7 @@ footer{
 
 .left-area{
     float:left;
-    margin:32px 0;
+    margin-top:2vh;
     width: 1400px;
 }
 .top-area,
@@ -546,7 +560,7 @@ footer{
 .mid-area p,
 .bottom-area p{
     font-family: 'pretendard';
-    font-size:16px;
+    font-size:14px;
     font-weight: 500;
     color:#fbfbfb;
 }
@@ -554,7 +568,7 @@ footer{
     color:#15AB49;
 }
 .footer-logo-container{
-    width: 150px; display: inline-block;
+    width: 120px; display: inline-block;
     vertical-align: middle;
 }
 .mid-area p{
@@ -572,10 +586,54 @@ footer{
     color:#fbfbfb;
     margin-top: 20px;
 }
+.top-area a:not(:last-of-type)::after{
+    content: '';
+    display: inline-block;
+    width: 2px;
+    margin-left: 8px;
+    height: 10px;
+    background-color: #969696;
+}
+.mid-area p::before{
+    content: '';
+    display: inline-block;
+    width: 2px;
+    margin-right: 8px;
+    height: 10px;
+    background-color: #969696;
+}
+.bottom-area p:not(:last-of-type)::after{
+    content: '';
+    display: inline-block;
+    width: 2px;
+    margin-left: 8px;
+    height: 10px;
+    background-color: #969696;
+}
+
+
 
 .right-area{
-    float:left;
-    width:180px;
+    float: left;
+    width: 180px;
+    position: relative;
+}
+.family-site{
+    border: 2px solid #969696;
+    border-bottom: none;
+    position: absolute;
+    width: 176px;
+    opacity: 0;
+    transition: 500ms;
+}
+.family-site li{
+    margin-bottom: 8px;
+    padding-left: 8px;
+}
+.family-site li a{
+    font-family: 'Roboto';
+    font-size:14px;
+    color:#969696;
 }
 .family-site-button{
     border: 2px solid #969696;
@@ -583,14 +641,22 @@ footer{
     display: block;
     box-sizing: border-box;
     border-radius: 10px;
+    margin-top: 82px;
+    padding: 2px 4px;
 }
 .family-site-button span{
     color: #969696;
-    font-size: 18px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    vertical-align: middle;
+    margin-right: 60px;
 }
-
+.family-site-button svg{
+    vertical-align: middle;
+}
 .sns-container{
     overflow: hidden;
+    margin-top: 20px;
 }
 .icon-space-container:not(:last-of-type){
     margin-right:28px;
