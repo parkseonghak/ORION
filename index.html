@@ -96,8 +96,7 @@
                     <h2>세계로 뻗어나가는</br>글로벌 기업</h2>
                 </div>
             </div>
-            <div class="circle-container">
-            </div>
+            <div class="circle-container"></div>
         </div>
         <figure class="scroll-top-move-btn">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
@@ -330,6 +329,55 @@
 
 
     <script>
+        
+        const btnContainer = document.querySelector('.circle-container');
+        const sliderContainer = document.querySelector('.main-slider-container');
+        const sliderBigContainer = document.querySelector('.slider-big-container');
+        const sliderWidth = sliderBigContainer.clientWidth;
+        const sliderLength = sliderContainer.childElementCount;
+
+        for(let i = 0; i < sliderLength; i++){
+            const makeCircle = document.createElement('div');
+            makeCircle.classList.add('circle');
+            btnContainer.appendChild(makeCircle);
+            btnContainer.children[i].addEventListener('click', ()=>{
+                index = i
+                moveSlide(1);
+            })
+        }
+        
+        const first = sliderContainer.firstElementChild.cloneNode(true);
+        
+        sliderContainer.appendChild(first);
+        
+        sliderContainer.style.width = sliderContainer.childElementCount * sliderWidth + 'px';
+
+        let index = 0;
+
+        setInterval(() => {
+            next();
+            console.log(index);
+        }, 5000);
+
+        function moveSlide(time){
+            sliderContainer.style.transition = time + 's'
+            sliderBigContainer.children[0].style.transform = 'translateX(-' + ((index)*1920) + 'px)';
+        }
+
+        function next(){
+            index++;
+            moveSlide(1);
+            setTimeout(()=>{
+                    if(index === sliderContainer.childElementCount-1){
+                        index = 0;
+                        moveSlide(0);
+                    }
+                }, 1000)
+        }
+// main finish
+
+        
+
 
     </script>
 </body>
