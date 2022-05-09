@@ -186,7 +186,7 @@ header:hover{
 }
 .search-container .search-icon{
     vertical-align: middle;
-    padding:4px;
+    padding:8px;
 }
 
 
@@ -572,14 +572,14 @@ section{
 }
 .global-introduce ul{
     overflow: hidden;
-    width: 600px;
+    width: 572px;
     margin: 0 auto;
 }
 .global-introduce ul li{
     margin-top:16px;
 }
 .global-introduce ul li a{
-   width:124px; height:50px;
+   height:50px;
    border:1px solid #D81B16;
    padding:2px;
    border-radius: 50px;
@@ -591,6 +591,7 @@ section{
    text-align: center;
    font-family: 'Roboto';
    line-height: 48px;
+   padding:0 16px;
    margin:0px 32px;
 }
 .global-introduce ul li a:hover{
@@ -673,7 +674,8 @@ footer{
 .bottom-area p{
     display: inline-block;
 }
-.bottom-area p span{
+.bottom-area p a{
+    color:#fbfbfb;
     font-weight: 200;
 }
 .copyright{
@@ -738,14 +740,14 @@ footer{
     box-sizing: border-box;
     border-radius: 10px;
     margin-top: 82px;
-    padding: 2px 4px;
+    padding: 2px 8px;
 }
 .family-site-button span{
     color: #969696;
     font-family: 'Roboto';
     font-size: 14px;
     vertical-align: middle;
-    margin-right: 60px;
+    margin-right: 52px;
 }
 .family-site-button svg{
     vertical-align: middle;

@@ -263,9 +263,9 @@
                         <p>서울시 용산구 백범로 90다길 13</p>
                     </div>
                     <div class="bottom-area">
-                        <p>전화 <span>02-710-6000</span></p>
-                        <p>상담실 <span>080-023-5700</span></p>
-                        <p>제품 구입 문의 <span>02-710-6083</span></p>
+                        <p>전화 <a href="tel:02-710-6000">02-710-6000</a></p>
+                        <p>상담실 <a href="tel:080-023-570">080-023-5700</a></p>
+                        <p>제품 구입 문의 <a href="tel:02-710-6083">02-710-6083</a></p>
                     </div>
                     <p class="copyright">COPYRIGHT ORION CORP. ALL RIGHT RESERVED.</p>
                 </div>
@@ -456,6 +456,18 @@
 
 // 02 section fin
 
+// 04 section start
+
+    const modify = document.getElementsByClassName('modify');
+    const aboutOrion = document.getElementsByClassName('about-orion');
+
+    Array.from(modify).forEach((item, i)  => {
+        modify[i].addEventListener('click', (e) => {
+            Array.from(modify).classList.remove('modify');
+        })
+    })
+
+// 04 section fin
 
     </script>
 </body>
