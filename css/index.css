@@ -43,7 +43,8 @@ body::-webkit-scrollbar{
 .about-orion,
 .global-orion,
 .global_explanation,
-.sns-icon{
+.sns-icon,
+.world-map-location{
     position: relative;
 }
 
@@ -64,7 +65,8 @@ body::-webkit-scrollbar{
 .move-global-page,
 .world-map-location img,
 .world-map-location svg,
-.sns-icon span{
+.sns-icon span,
+.world-location{
     position: absolute;
 }
 
@@ -407,6 +409,7 @@ section{
 .operation-container .header-section{
     display:block;
     width:100%;
+    height: 20vh;
     background-color: #fbfbfb;
     cursor:default;
 }
@@ -423,9 +426,11 @@ section{
     background-color: #6F5944;
 }
 .about-orion{
-    width:100%; height:65vh;
+    width:100%; height:85vh;
     transition: 700ms;
 }
+
+
 
 .modify{
     height: 20vh;
@@ -608,9 +613,10 @@ section{
     font-weight: 500;
     color:#333;
     margin-top: 30px;
+    transition: 300ms;
 }
 .hide-global{
-    display: none;
+    opacity: 0;
 }
 .move-global-page{
     left: 50%;
@@ -628,10 +634,32 @@ section{
     background-color: #D81B16;
     color:#fbfbfb;
 }
+.world-map-location{
+    height:80vh;
+}
 .world-map-location img{
     right:10%; top:50%;
     transform: translateY(-45%);
 }
+.world-map-location svg{
+    transition: 500ms;
+}
+.china-location{
+    right: 22%;
+    top: 44%;
+}
+.vietnam-location{
+    right: 21%;
+    top: 55%;
+}
+.russia-location{
+    right: 23%;
+    top: 30%;
+}
+.hide-location{
+    opacity: 0;
+}
+
 
 footer{
     background-color: #222;
@@ -722,7 +750,7 @@ footer{
     position: absolute;
     width: 176px;
     opacity: 0;
-    transition: 500ms;
+    transition: 1000ms;
 }
 .family-site li{
     margin-bottom: 8px;
