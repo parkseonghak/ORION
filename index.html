@@ -25,7 +25,7 @@
                 <nav class="header-nav-container">
                     <ul class="main-nav">
                         <li class="main-title">
-                            <a href="###">회사소개</a>
+                            <a href="###" class="filter-area">회사소개</a>
                             <ul class="sub-nav">
                                 <li><a href="###">회사개요</a></li>
                                 <li><a href="###">연혁</a></li>
@@ -35,7 +35,7 @@
                             </ul>
                         </li>
                         <li class="main-title">
-                            <a href="###">제품소개</a>
+                            <a href="###" class="filter-area">제품소개</a>
                             <ul class="sub-nav">
                                 <li><a href="###">초코파이</a></li>
                                 <li><a href="###">Market O</a></li>
@@ -44,7 +44,7 @@
                             </ul>
                         </li>
                         <li class="main-title">
-                            <a href="###">IR 정보</a>
+                            <a href="###" class="filter-area">IR 정보</a>
                             <ul class="sub-nav">
                                 <li><a href="###">경영정보</a></li>
                                 <li><a href="###">주식정보</a></li>
@@ -54,7 +54,7 @@
                             </ul>
                         </li>
                         <li class="main-title">
-                            <a href="###">고객센터</a>
+                            <a href="###" class="filter-area">고객센터</a>
                             <ul class="sub-nav">
                                 <li><a href="###">고객소리</a></li>
                                 <li><a href="###">불만접수</a></li>
@@ -65,7 +65,7 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="search-lang-container">
+                <div class="search-lang-container filter-area">
                     <div class="search-container">
                         <form action="###">
                             <a href="###" class="search-icon">
@@ -335,9 +335,24 @@
     <script>
         // scroll start
 
+        const headerScrollStop = document.querySelector('.header-container');
+        headerScrollStop.addEventListener('mousewheel', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        })
+
+        window.addEventListener('keydown', (e) => {
+            console.log(e.key);
+            if(e.key === ' ' || e.key === 'ArrowUp' || e.key ==='ArrowDown'){
+                e.preventDefault();
+            }
+        })
+
         window.onload = function(){
         const elm = document.querySelectorAll('section');
         const elmCount = elm.length;
+        let moveCheck = true;
         elm.forEach(function(item, index){
             item.addEventListener('mousewheel', function(event){
             event.preventDefault();
@@ -356,20 +371,32 @@
 
             // wheel down : move to next section
             if (delta < 0){
-                if (elmSelector !== elmCount-1){
-                    try{
-                    moveTop = window.pageYOffset + elmSelector.nextElementSibling.getBoundingClientRect().top;
-                    }catch(e){}
+                if(moveCheck){
+                    moveCheck = false;
+                    if (elmSelector !== elmCount-1){
+                        try{
+                        moveTop = window.pageYOffset + elmSelector.nextElementSibling.getBoundingClientRect().top;
+                        }catch(e){}
+                    }
+                    setTimeout(() => {
+                        moveCheck = true;
+                    }, 1000);
                 }
             }
           
           // wheel up : move to previous section
             else{
-                if (elmSelector !== 0){
-                try{
-                    moveTop = window.pageYOffset + elmSelector.previousElementSibling.getBoundingClientRect().top;
-                }catch(e){}
-            }
+                if(moveCheck){
+                    moveCheck = false;
+                    if (elmSelector !== 0){
+                    try{
+                        moveTop = window.pageYOffset + elmSelector.previousElementSibling.getBoundingClientRect().top;
+                    }catch(e){}
+                    }
+                    setTimeout(() => {
+                        moveCheck = true;
+                    }, 1000);
+                }
         }
 
           const body = document.querySelector('html');
@@ -427,8 +454,11 @@
                     btnContainer.children[0].classList.add('active');
                 }
             }
+            
+            if(sliderContainer.getBoundingClientRect().top === 0 && index === 2)
+            console.log(true);
         }
-      
+
         function moveSlide(time){
             sliderContainer.style.transition = time + 's'
             sliderBigContainer.children[0].style.transform = 'translateX(-' + ((index)*1920) + 'px)';
@@ -442,9 +472,9 @@
                     if(index === sliderContainer.childElementCount-1){
                         index = 0;
                         moveSlide(0);
-                    }
-                }, 1000)
-        }
+                    };
+                }, 1000);
+        };
 
 // 01 section fin
 
@@ -474,15 +504,9 @@
             Array.from(modify)[i].classList.remove('modify');
             Array.from(modify).filter(el => el !== modify[i]).forEach(el => el.classList.remove('modify'));
             Array.from(modify).filter(qw => qw !== modify[i]).forEach(qw => qw.classList.add('hide-section'));
-            headerSection.style.display = 'none';
+            modify[i].classList.remove('hide-section');
         });
     });
-
-    Array.from(hideSection).forEach((item, i) => {
-        hideSection[i].addEventListener('click', (e) => {
-            console.log('aaa');
-        })
-    })
 
 // 04 section fin
 
@@ -499,8 +523,8 @@
             Array.from(worldOrion).filter(el => el !== worldOrion[i]).forEach(el => el.classList.add('hide-global'));
             worldLocation[i].classList.remove('hide-location');
             Array.from(worldLocation).filter(qw => qw !== worldLocation[i]).forEach(qw => qw.classList.add('hide-location'));
-        })
-    })
+        });
+    });
 
 // 05 section fin
 
@@ -508,10 +532,16 @@
 
     const familySiteBtn = document.querySelector('.family-site-button');
     const familySiteList = document.querySelector('.family-site');
-
+    let opacityCheck = true;
     familySiteBtn.addEventListener('click', (e) => {
-        familySiteList.style.opacity = '1';
-    })
+        if(opacityCheck){
+            familySiteList.style.opacity = '1';
+            opacityCheck = false;
+        }else{
+            familySiteList.style.opacity = '0';
+            opacityCheck = true;
+        };
+    });
 
 
 // footer fin
