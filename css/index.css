@@ -14,7 +14,7 @@
 }
 
 .lang-container,
-.view-container h2{
+.product-list h2{
     font-family: 'Roboto', sans-serif;
 }
 
@@ -53,7 +53,6 @@ body::-webkit-scrollbar{
 .circle-container,
 .section-circle-deco svg,
 .view-container video,
-.view-container h2,
 .product:after,
 .affection-container ul li h2,
 .left-img-container,
@@ -200,11 +199,13 @@ header:hover{
     font-weight: 700;
     color:#333;
 }
-.filter-view{
-    filter: invert(1);
+.filter-area{
     transition: 500ms;
 }
-.header-container:hover .filter-view{
+.filter-invert{
+    filter:invert(1);
+}
+.header-container:hover .filter-area{
     filter:invert(0);
 }
 
@@ -303,6 +304,13 @@ section{
     width:100%; height:50vh;
     overflow: hidden;
 }
+.product-list h2{
+    width: 400px;
+    margin: 0 auto;
+    font-size: 32px;
+    color: #333;
+    margin-top: 48px;
+}
 .left-circle-deco{
     left:-150px;
 }
@@ -314,7 +322,7 @@ section{
     overflow: hidden;
     width:1500px;
     margin:0 auto;
-    padding: 84px 0;
+    padding: 48px 0;
     text-align: center;
 }
 .product{
@@ -536,6 +544,9 @@ section{
     left:20%;
     top:50%;
     transform: translateY(-50%);
+}
+.about-orion{
+    cursor: pointer;
 }
 .about-orion h2{
     font-family: 'pretendard';
