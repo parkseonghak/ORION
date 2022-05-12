@@ -400,23 +400,37 @@
 
                 const body = document.querySelector('html');
                 window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
+
+                if(index > 0){
+                    
+                }
             });
         });
         const footerWheel = document.querySelector('footer');
-    footerWheel.addEventListener('mousewheel', (e) => {
-        e.preventDefault();
-        if(e.wheelDelta === 120){
+        footerWheel.addEventListener('mousewheel', (e) => {
+            e.preventDefault();
+            if(e.wheelDelta === 120){
+                if(moveCheck){
+                    moveCheck = false;
+                    window.scrollTo({top:window.pageYOffset-969, left:0, behavior:'smooth'});
+                    setTimeout(() => {
+                        moveCheck = true;
+                    }, 1000);
+                };
+            };
+        });
+        const topButton = document.querySelector('.scroll-top-move-btn');
+        
+        topButton.addEventListener('click', (e) => {
             if(moveCheck){
-                console.log('드르륵')
                 moveCheck = false;
-                window.scrollTo({top:window.pageYOffset-969, left:0, behavior:'smooth'});
+                window.scrollTo({top:0, left:0, behavior:'smooth'});
                 setTimeout(() => {
                     moveCheck = true;
                 }, 1000);
-            }
-        }
-    })
-    }
+            };
+        });
+    };
 
         // scroll fin
 
@@ -480,7 +494,6 @@
                     filterView[i].classList.remove('filter-invert');
                 }
             }
-                
         }
 
         function moveSlide(time){
@@ -560,15 +573,7 @@
 
 // 05 section fin
 
-// 
 
-    const topButton = document.querySelector('.scroll-top-move-btn');
-
-    topButton.addEventListener('click', (e) => {
-        window.scrollTo({top:0, left:0, behavior:'smooth'});
-    })
-
-// 
 
 
 // footer start
