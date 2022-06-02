@@ -34,7 +34,7 @@
             item.addEventListener('mousewheel', function(event){
                 event.preventDefault();
                 let delta = 0;
-                
+                console.log(moveCheck);
                 if (!event) event = window.event;
                 if (event.wheelDelta) {
                 delta = event.wheelDelta / 120;
@@ -58,6 +58,7 @@
                                 console.log('wow');
                                 removeFilter();
                             }
+                            window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
                             
                             }catch(e){}
                         }
@@ -78,6 +79,7 @@
                                 console.log('wow');
                                 insertFilter();
                             }
+                            window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
                             
                             
                         }catch(e){}
@@ -88,8 +90,7 @@
                     }
                 }
 
-                const body = document.querySelector('html');
-                window.scrollTo({top:moveTop, left:0, behavior:'smooth'});
+                
                 
 
             
